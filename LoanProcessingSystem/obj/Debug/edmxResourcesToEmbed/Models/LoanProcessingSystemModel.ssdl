@@ -47,17 +47,7 @@
     <Property Name="UserId" Type="int" />
     <Property Name="AuthorityId" Type="int" />
     <Property Name="Date" Type="date" />
-    <Property Name="Status" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="Status" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="UserRegister">
     <Key>
@@ -69,7 +59,7 @@
     <Property Name="Gender" Type="varchar" MaxLength="10" />
     <Property Name="Password" Type="varchar(max)" />
   </EntityType>
-  <Association Name="FK__LoanForm__Inspec__4D94879B">
+  <Association Name="FK__LoanForm__Inspec__164452B1">
     <End Role="AdminDetail" Type="Self.AdminDetail" Multiplicity="0..1" />
     <End Role="LoanForm" Type="Self.LoanForm" Multiplicity="*" />
     <ReferentialConstraint>
@@ -81,7 +71,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__StatusTra__Appli__5070F446">
+  <Association Name="FK__StatusTra__Appli__1920BF5C">
     <End Role="LoanForm" Type="Self.LoanForm" Multiplicity="0..1" />
     <End Role="StatusTrack" Type="Self.StatusTrack" Multiplicity="*" />
     <ReferentialConstraint>
@@ -93,7 +83,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__StatusTra__Autho__52593CB8">
+  <Association Name="FK__StatusTra__Autho__1B0907CE">
     <End Role="AdminDetail" Type="Self.AdminDetail" Multiplicity="0..1" />
     <End Role="StatusTrack" Type="Self.StatusTrack" Multiplicity="*" />
     <ReferentialConstraint>
@@ -105,7 +95,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__StatusTra__UserI__5165187F">
+  <Association Name="FK__StatusTra__UserI__1A14E395">
     <End Role="UserRegister" Type="Self.UserRegister" Multiplicity="0..1" />
     <End Role="StatusTrack" Type="Self.StatusTrack" Multiplicity="*" />
     <ReferentialConstraint>
@@ -122,21 +112,20 @@
     <EntitySet Name="EnquiryTable" EntityType="Self.EnquiryTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoanForm" EntityType="Self.LoanForm" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StatusTrack" EntityType="Self.StatusTrack" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRegister" EntityType="Self.UserRegister" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__LoanForm__Inspec__4D94879B" Association="Self.FK__LoanForm__Inspec__4D94879B">
+    <AssociationSet Name="FK__LoanForm__Inspec__164452B1" Association="Self.FK__LoanForm__Inspec__164452B1">
       <End Role="AdminDetail" EntitySet="AdminDetail" />
       <End Role="LoanForm" EntitySet="LoanForm" />
     </AssociationSet>
-    <AssociationSet Name="FK__StatusTra__Appli__5070F446" Association="Self.FK__StatusTra__Appli__5070F446">
+    <AssociationSet Name="FK__StatusTra__Appli__1920BF5C" Association="Self.FK__StatusTra__Appli__1920BF5C">
       <End Role="LoanForm" EntitySet="LoanForm" />
       <End Role="StatusTrack" EntitySet="StatusTrack" />
     </AssociationSet>
-    <AssociationSet Name="FK__StatusTra__Autho__52593CB8" Association="Self.FK__StatusTra__Autho__52593CB8">
+    <AssociationSet Name="FK__StatusTra__Autho__1B0907CE" Association="Self.FK__StatusTra__Autho__1B0907CE">
       <End Role="AdminDetail" EntitySet="AdminDetail" />
       <End Role="StatusTrack" EntitySet="StatusTrack" />
     </AssociationSet>
-    <AssociationSet Name="FK__StatusTra__UserI__5165187F" Association="Self.FK__StatusTra__UserI__5165187F">
+    <AssociationSet Name="FK__StatusTra__UserI__1A14E395" Association="Self.FK__StatusTra__UserI__1A14E395">
       <End Role="UserRegister" EntitySet="UserRegister" />
       <End Role="StatusTrack" EntitySet="StatusTrack" />
     </AssociationSet>

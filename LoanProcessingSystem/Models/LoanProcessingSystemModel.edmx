@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MortgageDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MortgageDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AdminDetail">
           <Key>
             <PropertyRef Name="Id" />
@@ -135,8 +135,7 @@
             <End Role="StatusTrack" EntitySet="StatusTrack" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MortgageDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -150,8 +149,8 @@
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNo" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="LoanForms" Relationship="Self.FK__LoanForm__Inspec__164452B1" FromRole="AdminDetail" ToRole="LoanForm" />
-          <NavigationProperty Name="StatusTracks" Relationship="Self.FK__StatusTra__Autho__1B0907CE" FromRole="AdminDetail" ToRole="StatusTrack" />
+          <NavigationProperty Name="LoanForms" Relationship="Self.FK__LoanForm__Inspec__4D94879B" FromRole="AdminDetail" ToRole="LoanForm" />
+          <NavigationProperty Name="StatusTracks" Relationship="Self.FK__StatusTra__Autho__52593CB8" FromRole="AdminDetail" ToRole="StatusTrack" />
         </EntityType>
         <EntityType Name="EnquiryTable">
           <Key>
@@ -179,8 +178,8 @@
           <Property Name="ImageUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="InspectorId" Type="Int32" />
-          <NavigationProperty Name="AdminDetail" Relationship="Self.FK__LoanForm__Inspec__164452B1" FromRole="LoanForm" ToRole="AdminDetail" />
-          <NavigationProperty Name="StatusTracks" Relationship="Self.FK__StatusTra__Appli__1920BF5C" FromRole="LoanForm" ToRole="StatusTrack" />
+          <NavigationProperty Name="AdminDetail" Relationship="Self.FK__LoanForm__Inspec__4D94879B" FromRole="LoanForm" ToRole="AdminDetail" />
+          <NavigationProperty Name="StatusTracks" Relationship="Self.FK__StatusTra__Appli__5070F446" FromRole="LoanForm" ToRole="StatusTrack" />
         </EntityType>
         <EntityType Name="StatusTrack">
           <Key>
@@ -192,9 +191,9 @@
           <Property Name="AuthorityId" Type="Int32" />
           <Property Name="Date" Type="DateTime" Precision="0" />
           <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="AdminDetail" Relationship="Self.FK__StatusTra__Autho__1B0907CE" FromRole="StatusTrack" ToRole="AdminDetail" />
-          <NavigationProperty Name="LoanForm" Relationship="Self.FK__StatusTra__Appli__1920BF5C" FromRole="StatusTrack" ToRole="LoanForm" />
-          <NavigationProperty Name="UserRegister" Relationship="Self.FK__StatusTra__UserI__1A14E395" FromRole="StatusTrack" ToRole="UserRegister" />
+          <NavigationProperty Name="AdminDetail" Relationship="Self.FK__StatusTra__Autho__52593CB8" FromRole="StatusTrack" ToRole="AdminDetail" />
+          <NavigationProperty Name="LoanForm" Relationship="Self.FK__StatusTra__Appli__5070F446" FromRole="StatusTrack" ToRole="LoanForm" />
+          <NavigationProperty Name="UserRegister" Relationship="Self.FK__StatusTra__UserI__5165187F" FromRole="StatusTrack" ToRole="UserRegister" />
         </EntityType>
         <EntityType Name="UserRegister">
           <Key>
@@ -205,9 +204,9 @@
           <Property Name="EmailId" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
           <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="StatusTracks" Relationship="Self.FK__StatusTra__UserI__1A14E395" FromRole="UserRegister" ToRole="StatusTrack" />
+          <NavigationProperty Name="StatusTracks" Relationship="Self.FK__StatusTra__UserI__5165187F" FromRole="UserRegister" ToRole="StatusTrack" />
         </EntityType>
-        <Association Name="FK__LoanForm__Inspec__164452B1">
+        <Association Name="FK__LoanForm__Inspec__4D94879B">
           <End Role="AdminDetail" Type="Self.AdminDetail" Multiplicity="0..1" />
           <End Role="LoanForm" Type="Self.LoanForm" Multiplicity="*" />
           <ReferentialConstraint>
@@ -219,7 +218,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__StatusTra__Autho__1B0907CE">
+        <Association Name="FK__StatusTra__Autho__52593CB8">
           <End Role="AdminDetail" Type="Self.AdminDetail" Multiplicity="0..1" />
           <End Role="StatusTrack" Type="Self.StatusTrack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -231,7 +230,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__StatusTra__Appli__1920BF5C">
+        <Association Name="FK__StatusTra__Appli__5070F446">
           <End Role="LoanForm" Type="Self.LoanForm" Multiplicity="0..1" />
           <End Role="StatusTrack" Type="Self.StatusTrack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -243,7 +242,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__StatusTra__UserI__1A14E395">
+        <Association Name="FK__StatusTra__UserI__5165187F">
           <End Role="UserRegister" Type="Self.UserRegister" Multiplicity="0..1" />
           <End Role="StatusTrack" Type="Self.StatusTrack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -261,19 +260,19 @@
           <EntitySet Name="LoanForms" EntityType="Self.LoanForm" />
           <EntitySet Name="StatusTracks" EntityType="Self.StatusTrack" />
           <EntitySet Name="UserRegisters" EntityType="Self.UserRegister" />
-          <AssociationSet Name="FK__LoanForm__Inspec__164452B1" Association="Self.FK__LoanForm__Inspec__164452B1">
+          <AssociationSet Name="FK__LoanForm__Inspec__4D94879B" Association="Self.FK__LoanForm__Inspec__4D94879B">
             <End Role="AdminDetail" EntitySet="AdminDetails" />
             <End Role="LoanForm" EntitySet="LoanForms" />
           </AssociationSet>
-          <AssociationSet Name="FK__StatusTra__Autho__1B0907CE" Association="Self.FK__StatusTra__Autho__1B0907CE">
+          <AssociationSet Name="FK__StatusTra__Autho__52593CB8" Association="Self.FK__StatusTra__Autho__52593CB8">
             <End Role="AdminDetail" EntitySet="AdminDetails" />
             <End Role="StatusTrack" EntitySet="StatusTracks" />
           </AssociationSet>
-          <AssociationSet Name="FK__StatusTra__Appli__1920BF5C" Association="Self.FK__StatusTra__Appli__1920BF5C">
+          <AssociationSet Name="FK__StatusTra__Appli__5070F446" Association="Self.FK__StatusTra__Appli__5070F446">
             <End Role="LoanForm" EntitySet="LoanForms" />
             <End Role="StatusTrack" EntitySet="StatusTracks" />
           </AssociationSet>
-          <AssociationSet Name="FK__StatusTra__UserI__1A14E395" Association="Self.FK__StatusTra__UserI__1A14E395">
+          <AssociationSet Name="FK__StatusTra__UserI__5165187F" Association="Self.FK__StatusTra__UserI__5165187F">
             <End Role="UserRegister" EntitySet="UserRegisters" />
             <End Role="StatusTrack" EntitySet="StatusTracks" />
           </AssociationSet>

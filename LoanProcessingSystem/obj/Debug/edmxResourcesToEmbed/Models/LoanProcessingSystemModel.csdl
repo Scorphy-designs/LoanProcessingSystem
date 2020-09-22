@@ -51,20 +51,10 @@
     <Property Name="UserId" Type="Int32" />
     <Property Name="AuthorityId" Type="Int32" />
     <Property Name="Date" Type="DateTime" Precision="0" />
-    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="AdminDetail" Relationship="Self.FK__StatusTra__Autho__52593CB8" FromRole="StatusTrack" ToRole="AdminDetail" />
     <NavigationProperty Name="LoanForm" Relationship="Self.FK__StatusTra__Appli__5070F446" FromRole="StatusTrack" ToRole="LoanForm" />
     <NavigationProperty Name="UserRegister" Relationship="Self.FK__StatusTra__UserI__5165187F" FromRole="StatusTrack" ToRole="UserRegister" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="UserRegister">
     <Key>
@@ -130,7 +120,6 @@
     <EntitySet Name="EnquiryTables" EntityType="Self.EnquiryTable" />
     <EntitySet Name="LoanForms" EntityType="Self.LoanForm" />
     <EntitySet Name="StatusTracks" EntityType="Self.StatusTrack" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="UserRegisters" EntityType="Self.UserRegister" />
     <AssociationSet Name="FK__LoanForm__Inspec__4D94879B" Association="Self.FK__LoanForm__Inspec__4D94879B">
       <End Role="AdminDetail" EntitySet="AdminDetails" />
